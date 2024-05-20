@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Details</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        .con{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <h2>LOGIN Form</h2>
+    <form id="registrationForm" action="reg3">
+        <fieldset>
+            <legend>LogIn Details</legend>
+            <div class="row">
+                <label for="Type">Type:</label>
+                <select id="Type" name="Type">
+                    <option value="Student">Student</option>
+                    <option value="employee">Employee</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
+            
+            <div class="row">
+                <label for="uname">UserName:</label>
+                <input type="text" id="uname" name="uname" required placeholder="Username or Email">
+            </div>
+            <div class="row">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+                       
+        </fieldset>        
+        
+        <div class="btn-con">
+            <button type="submit">Login</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+
+    
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

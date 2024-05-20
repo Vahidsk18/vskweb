@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+    <div class="con">
+        <div id="registrationForm">
+            <h2>Registration Form</h2>
+            <fieldset>
+                <legend>Registration</legend>
+                <div class="row">
+                    <label for="Type">Type:</label>
+                    <select id="Type" name="Type">
+                        <option value="Student">Student</option>
+                        <option value="employee">Employee</option>
+                    </select>
+                    <button onclick="showLoginForm()">Next</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+
+    <div class="con1">
+        <div id="loginForms" style="display: none;">
+            <div id="StudentLoginForm" style="display: none;">
+                <h2>Student  Details</h2>
+                <fieldset>
+                    <form action="reglogin.html">
+                        <div class="row">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="row">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="row">
+                            <label for="dob">Date of Birth:</label>
+                            <input type="date" id="dob" name="dob" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}"
+                                required>
+                        </div>
+                        <div class="row">
+                            <label for="age">Age:</label>
+                            <input type="number" id="age" name="age" readonly>
+                        </div>
+                       
+                        <div class="row">
+                            <label for="institution">Name of the Institution:</label>
+                            <input type="text" id="institution" name="inst" required>
+                        </div>
+                        <div class="row">
+                            <label for="pyear">Year of Passing:</label>
+                            <input type="number" id="pyear" name="year" minlength="4" maxlength="4" required>
+                        </div>
+                        <div class="row">
+                            <label for="passPer">Pass Percentage:</label>
+                            <input type="number" id="passPer" name="per" required>
+                        </div>
+                        <div class="btn-con">
+                            <button type="submit">Next</button>
+                            <button type="reset">Reset</button>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+
+
+        <div id="employeeLoginForm" style="display: none;">
+            <h2>Employee Login</h2>
+            <form action="done.html">
+                <fieldset>
+                    <div class="row">
+                        <label for="UserName">UserName:</label>
+                        <input type="text" id="UserName" name="UserName" required placeholder="Username or Email">
+                    </div>
+                    <div class="row">
+                        <label for="Password">Password:</label>
+                        <input type="Password" id="Password" name="Password" placeholder="Password">
+                    </div>
+                    <div class="row">
+                        <label for="confirmpassword">Confirm Password:</label>
+                        <input type="Password" id="confirmpassword" name="confirmpassword" required placeholder="Password">
+                    </div>
+                    <div class="btn-con">
+                        <button type="submit">Next</button>
+                        <button type="reset">Reset</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function showLoginForm() {
+            var Type = document.getElementById("Type").value;
+            if (Type === "Student") {
+                document.getElementById("StudentLoginForm").style.display = "block";
+                document.getElementById("employeeLoginForm").style.display = "none";
+            } else if (Type === "employee") {
+                document.getElementById("StudentLoginForm").style.display = "none";
+                document.getElementById("employeeLoginForm").style.display = "block";
+            }
+            document.getElementById("loginForms").style.display = "block";
+        }
+
+        document.getElementById('dob').addEventListener('change', function () {
+            const dob = new Date(this.value);
+            const today = new Date();
+            const age = today.getFullYear() - dob.getFullYear();
+            document.getElementById('age').value = age;
+        });
+    </script>
+
+</body>
+
+</html>

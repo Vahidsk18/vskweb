@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="reglogin.css">
+</head>
+
+<body>
+    <div class="con">
+        <h2>Registration Form</h2>
+        <form id="registrationForm" action="done.html">
+            <fieldset>
+                <legend>Student Details</legend>
+                <div class="row">
+                    <label for="UserName">UserName:</label>
+                    <input type="text" id="UserName" name="UserName" required placeholder="Username or Email">
+                </div>
+                <div class="row">
+                    <label for="Password">Password:</label>
+                    <input type="Password" id="Password" name="Password" placeholder="Password">
+                </div>
+                <div class="row">
+                    <label for="confirmpassword">Confirm Password:</label>
+                    <input type="Password" id="confirmpassword" name="confirmpassword" required placeholder="Password">
+                </div>
+                <div class="btn-con">
+                    <button type="submit">Next</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>       
+</body>
+
+</html>
